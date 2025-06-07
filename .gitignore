@@ -1,0 +1,5 @@
+x3ui-exporter
+!cmd/*
+logs/trace.log
+# Added by goreleaser init:
+dist/
