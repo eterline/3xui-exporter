@@ -21,8 +21,8 @@ builds:
     goos:
       - linux
 
-    main: ./cmd/x3ui-exporter
-    binary: x3ui-exporter-bin
+    main: ./cmd/3xui-exporter
+    binary: 3xui-exporter-bin
 
 archives:
   - formats: [tar.gz]
@@ -49,7 +49,7 @@ changelog:
 release:
   github:
     owner: eterline
-    name: x3ui-exporter
+    name: 3xui-exporter
   footer: |
     ## Time is: ({{ .Date }})
     Welcome to this new release!

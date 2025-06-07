@@ -2,7 +2,7 @@
 
 # ========= Vars definitions =========
 
-app = x3ui-exporter
+app = 3xui-exporter
 
 # ========= Prepare commands =========
 
