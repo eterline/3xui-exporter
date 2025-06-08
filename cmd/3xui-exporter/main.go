@@ -9,9 +9,9 @@ import (
 
 var (
 	cfg = config.Configuration{
-		LogDir:  "./logs",
-		LogJSON: false,
-		Debug:   false,
+		LogDir:    "./logs",
+		LogPretty: true,
+		Debug:     false,
 
 		Listen:     ":4500",
 		CrtFileSSL: "",
@@ -35,7 +35,7 @@ func main() {
 
 		err = logger.InitLogger(
 			logger.WithDevEnvBool(cfg.Debug),
-			logger.WithPrettyValue(!cfg.LogJSON),
+			logger.WithPrettyValue(cfg.LogPretty),
 			logger.WithPath(cfg.LogDir),
 		)
 

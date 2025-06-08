@@ -1,0 +1,11 @@
+services:
+  3xui-exporter:
+    image: 3xui-exporter:latest
+    container_name: 3xui-exporter
+    hostname: 3xui-exporter
+    restart: unless-stopped
+    environment:
+      - URL=${XUI_URL}
+      - BASE=${XUI_BASE}
+      - LOGIN=${XUI_LOGIN}
+      - PASSWORD=${XUI_PASSWORD}

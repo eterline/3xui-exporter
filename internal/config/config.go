@@ -8,18 +8,18 @@ import (
 )
 
 type Configuration struct {
-	LogDir  string `arg:"--log-dir" help:"log file directory"`
-	LogJSON bool   `arg:"--log-json" help:"log format in JSON syntax"`
-	Debug   bool   `arg:"--debug" help:"allow debug logging level"`
+	LogDir    string `arg:"--log-dir,env:LOG_DIR" help:"log file directory"`
+	LogPretty bool   `arg:"--log-json,env:LOG_PRETTY" help:"log format in JSON syntax"`
+	Debug     bool   `arg:"--debug,env:ENV_DEBUG" help:"allow debug logging level"`
 
 	Listen     string `arg:"--listen" help:"Server listen address"`
-	CrtFileSSL string `arg:"--certfile" help:"Server SSL certificate file"`
-	KeyFileSSL string `arg:"--keyfile" help:"Server SSL key file"`
+	CrtFileSSL string `arg:"--certfile,env:CERT" help:"Server SSL certificate file"`
+	KeyFileSSL string `arg:"--keyfile,env:KEY" help:"Server SSL key file"`
 
-	DashboardURL      string `arg:"--url" help:"3X-UI dashboard url"`
-	DashboardBase     string `arg:"--base" help:"3X-UI dashboard url additional base"`
-	DashboardLogin    string `arg:"--login" help:"3X-UI user login"`
-	DashboardPassword string `arg:"--password" help:"3X-UI user password"`
+	DashboardURL      string `arg:"--url,env:URL" help:"3X-UI dashboard url"`
+	DashboardBase     string `arg:"--base,env:BASE" help:"3X-UI dashboard url additional base"`
+	DashboardLogin    string `arg:"--login,env:LOGIN" help:"3X-UI user login"`
+	DashboardPassword string `arg:"--password,env:PASSWORD" help:"3X-UI user password"`
 }
 
 var (
