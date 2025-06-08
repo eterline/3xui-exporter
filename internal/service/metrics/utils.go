@@ -20,10 +20,6 @@ func setMetric[T constraints.Integer | constraints.Float](p *prometheus.GaugeVec
 	p.WithLabelValues(params...).Set(convertNumberToFloat(value))
 }
 
-func addMetric[T constraints.Integer | constraints.Float](p *prometheus.CounterVec, value T, params ...string) {
-	p.WithLabelValues(params...).Add(convertNumberToFloat(value))
-}
-
 func convertNumberToFloat[T constraints.Integer | constraints.Float](v T) float64 {
 	switch any(v).(type) {
 	case int:
