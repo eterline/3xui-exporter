@@ -1,7 +1,7 @@
 
 # 3xui-exporter
 
-X3-UI traffic counter exporter with prometheus syntax. Written in Go
+[3X-UI](https://github.com/MHSanaei/3x-ui) traffic counter exporter with prometheus syntax. Written in Go
 
 ## License
 

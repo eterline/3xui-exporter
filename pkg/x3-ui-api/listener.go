@@ -47,7 +47,7 @@ func (sl *StatsHandle) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func (sl *StatsHandle) Updates(ctx context.Context) <-chan StatsMessage {
 	updateChan := make(chan StatsMessage)
 
-	go func() {
+	go func(ctx context.Context) {
 		defer close(updateChan)
 
 		for {
@@ -58,16 +58,18 @@ func (sl *StatsHandle) Updates(ctx context.Context) <-chan StatsMessage {
 
 			case stats, ok := <-sl.statChan:
 				if !ok {
-					updateChan <- StatsMessage{
-						Updates: TrafficUpdates{},
-						Err:     ErrUpdaterClosed,
+					if stats.Err != nil {
+						updateChan <- stats
 					}
+
+					stats.Err = ErrUpdaterClosed
+					updateChan <- stats
 					return
 				}
 				updateChan <- stats
 			}
 		}
-	}()
+	}(ctx)
 
 	return updateChan
 }

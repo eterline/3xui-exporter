@@ -15,6 +15,11 @@ type Configuration struct {
 	Listen     string `arg:"--listen" help:"Server listen address"`
 	CrtFileSSL string `arg:"--certfile" help:"Server SSL certificate file"`
 	KeyFileSSL string `arg:"--keyfile" help:"Server SSL key file"`
+
+	DashboardURL      string `arg:"--url" help:"3X-UI dashboard url"`
+	DashboardBase     string `arg:"--base" help:"3X-UI dashboard url additional base"`
+	DashboardLogin    string `arg:"--login" help:"3X-UI user login"`
+	DashboardPassword string `arg:"--password" help:"3X-UI user password"`
 }
 
 var (

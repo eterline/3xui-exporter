@@ -13,7 +13,7 @@ import (
 )
 
 type xuiRequest struct {
-	xui *X3UIClient
+	xui *XUIClient
 	req *http.Request
 	res *http.Response
 	Ok  bool

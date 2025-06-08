@@ -68,9 +68,10 @@ type (
 	}
 )
 
-func (ctf ClientTraffic) DownTraffic() float64 { return float64(ctf.Down) }
-func (ctf ClientTraffic) UpTraffic() float64   { return float64(ctf.Up) }
-func (ctf ClientTraffic) EmailString() string  { return ctf.Email }
+func (ctf ClientTraffic) DownTraffic() float64  { return float64(ctf.Down) }
+func (ctf ClientTraffic) UpTraffic() float64    { return float64(ctf.Up) }
+func (ctf ClientTraffic) TotalTraffic() float64 { return float64(ctf.Total) }
+func (ctf ClientTraffic) EmailString() string   { return ctf.Email }
 
 func (itf InboundTraffic) DownTraffic() float64 { return float64(itf.Down) }
 func (itf InboundTraffic) UpTraffic() float64   { return float64(itf.Up) }

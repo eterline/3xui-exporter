@@ -16,6 +16,11 @@ var (
 		Listen:     ":4500",
 		CrtFileSSL: "",
 		KeyFileSSL: "",
+
+		DashboardURL:      "",
+		DashboardBase:     "",
+		DashboardLogin:    "",
+		DashboardPassword: "",
 	}
 )
 
