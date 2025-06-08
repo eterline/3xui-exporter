@@ -19,4 +19,4 @@ RUN \
     chmod +x /app/app && \
     mkdir logs
 
-CMD [ "./app", "--listen", "localhost:9100" ]
+CMD [ "./app", "--listen", ":9100" ]
